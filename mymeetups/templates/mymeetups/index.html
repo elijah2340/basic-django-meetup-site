@@ -1,0 +1,16 @@
+{% extends 'mymeetups/base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block mainheading %}Home{% endblock %}
+
+{% block content %}
+<section>
+    <h2>upcoming meetups</h2>
+    <a href="{% url 'post-create' %}" class="btn btn-primary">Post new meetup</a>
+    <ol>
+    {% for item in meetups %}
+        {% include 'includes/include.html' with title=item.title image=item.image.url  %}
+    {% endfor %}
+    </ol>
+</section>
+{% endblock %}

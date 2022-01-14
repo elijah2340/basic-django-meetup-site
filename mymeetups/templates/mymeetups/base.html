@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Meetups-{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'mymeetups/styles/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'mymeetups/styles/all-meetups.css' %}">
+    {% block css %}{% endblock %}
+</head>
+<body>
+    <header id="main-header">
+        <nav>
+            <a id="main-logo" href="{% url 'index' %}">Meetups-{% block mainheading %}{% endblock %}</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
